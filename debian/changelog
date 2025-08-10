@@ -1,3 +1,9 @@
+eid-mw (5.1.21v5.1.21-0deb13-0+ple0) UNRELEASED; urgency=medium
+
+  * Fixed debian build for trixie from tag v5.1.21 
+
+ -- Pieter Lenaerts <pieter.lenaerts@outlook.be>  Sun, 10 Aug 2025 18:12:17 +0200
+
 eid-mw (4.0.0) unstable; urgency=low
 
   * Initial release

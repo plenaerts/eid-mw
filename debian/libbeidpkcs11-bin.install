@@ -9,8 +9,6 @@ usr/bin/about-eid-mw
 usr/share/locale/de/LC_MESSAGES/about-eid-mw.mo
 usr/share/locale/fr/LC_MESSAGES/about-eid-mw.mo
 usr/share/locale/nl/LC_MESSAGES/about-eid-mw.mo
-usr/share/locale/en@boldquot/LC_MESSAGES/about-eid-mw.mo
-usr/share/locale/en@quot/LC_MESSAGES/about-eid-mw.mo
 usr/lib/mozilla/pkcs11-modules/beidpkcs11.json
 usr/lib/mozilla/pkcs11-modules/beidpkcs11_alt.json
 usr/lib/mozilla/managed-storage/belgiumeid@eid.belgium.be.json

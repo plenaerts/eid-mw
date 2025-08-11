@@ -17,6 +17,10 @@ export LDFLAGS += $(shell pkg-config --libs gpg-error)
 override_dh_auto_configure:
 	dh_auto_configure -- --libexecdir=/usr/lib/eid-mw --enable-p11v220 --enable-webextension
 
+override_dh_auto_build:
+	dh_auto_build
+	$(MAKE) -C plugins_tools/aboutmw/gtk/po update-gmo
+
 override_dh_installexamples:
 	dh_installexamples -X.svn
 

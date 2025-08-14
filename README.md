@@ -1,6 +1,43 @@
-# BeID middleware
+# BeID middleware - TrixieRelease build
 
-## About
+This repository contains some *temporary* fixes in the main repo's debian/*
+files.
+
+**eid-mw is a collection of very sensitive packages. You should not build them
+yourself unless you have good reason to, such as late packages for the Trixie
+release.**
+
+Building eid-mw packages yourself until FOD BOSA fixes their issues is
+relatively simple but pulls in a lot of tbuild dependencies.
+
+When BOSA has their builds ready, make sure to revert to those! Keep an eye on
+[install instructions from
+BOSA](https://eid.belgium.be/nl/linux-eid-software-installatie) or [the
+relevant github
+issue](https://github.com/Fedict/eid-mw/issues/224#issuecomment-3183601074).
+
+
+To build your own eid-mw packages you can clone this repository, checkout the
+TrixieRelease branch and execute:
+
+```bash
+sudo apt-get update && sudo apt-get upgrade     # Get your system in shape
+sudo apt-get install build-essential devscripts # Get essential build tools.
+sudo mk-build-deps -i     # build and install a package satisfying eid-mw's
+                          # build-dependencies
+debuild                   # build the eid-mw packages themselves.
+cd ..
+sudo dpkg -i beid-mozilla-extension_5.1.21v5.1.21-0deb13-0+ple0_all.deb \
+             libbeidpkcs11-0_5.1.21v5.1.21-0deb13-0+ple0_amd64.deb \
+             libeidviewer0_5.1.21v5.1.21-0deb13-0+ple0_amd64.deb \
+             beid-mozilla-webext_5.1.21v5.1.21-0deb13-0+ple0_all.deb \
+             libbeidpkcs11-bin_5.1.21v5.1.21-0deb13-0+ple0_amd64.deb \
+             eid-mw_5.1.21v5.1.21-0deb13-0+ple0_amd64.deb \
+             eid-viewer_5.1.21v5.1.21-0deb13-0+ple0_amd64.deb
+sudo apt-get -f install   # Should any dependencies be left unresolved.
+```
+
+## Original eid-mw About
 
 This repository contains the software and viewer for the Belgian
 electronic identity card. With this, you can:
